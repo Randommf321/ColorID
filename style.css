@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+.container{
+    min-height: 105vh;
+    width: 100%;
+    background: linear-gradient(45deg, #00a0f7, #ec8d12, #7462ff, #f46e21);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 80px;
+}
+@keyframes color{
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+.colorPicker{
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    grid-template-rows: repeat(5, 200px);
+    gap: 15px;
+    margin: 40px 0;
+}
+.mybox{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(210, 205, 205);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.tilt-left:hover{
+    transform: scale(1.1) rotate(-8deg);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+.tilt-right:hover{
+    transform: scale(1.1) rotate(8deg);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+.refresh{
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #d688f7;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mybox:first-child{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.colorCode{
+    position: absolute;
+    bottom: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid white;
+    color: black;
+}
